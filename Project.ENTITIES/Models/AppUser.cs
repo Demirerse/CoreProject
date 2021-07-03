@@ -23,5 +23,6 @@ namespace Project.ENTITIES.Models
 
         //Relational Properties
         public virtual AppUserProfile Profile { get; set; }
+        public virtual List<Article> Articles { get; set; }
     }
 }
