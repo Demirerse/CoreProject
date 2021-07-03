@@ -1,0 +1,18 @@
+﻿using Project.ENTITIES.CoreInterfaces;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Project.ENTITIES.Models
+{
+    public class Category:BaseEntity, IEntity
+    {
+        public string Categoryname { get; set; }
+        public string Description { get; set; }
+
+
+        //Relational Properties
+        public virtual List<Article> Articles { get; set; }
+
+    }
+}
