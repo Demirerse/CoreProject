@@ -22,6 +22,7 @@ namespace Project.BLL.ServiceExtensions
             services.AddScoped<IEditorRepository, EditorRepository>();
             services.AddScoped<IProfileRepository, ProfileRepository>();
             services.AddScoped<ITagRepository, TagRepository>();
+           
 
             //Managers
             services.AddScoped(typeof(IManager<>), typeof(BaseManager<>));
@@ -32,6 +33,8 @@ namespace Project.BLL.ServiceExtensions
             services.AddScoped<IEditorManager, EditorManager>();
             services.AddScoped<IProfileManager, ProfileManager>();
             services.AddScoped<ITagManager, TagManager>();
+            services.AddScoped<IUserIdentityManager, UserIdentityManager>();
+            services.AddScoped<ILoginManager, LoginManager>();
 
             return services;
         }

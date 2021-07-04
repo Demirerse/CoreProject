@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Project.DAL.Repositories.Concretes
 {
-    public class AppUserRepository:BaseRepository<AppUser>, IAppUserRepository
+    public class AppUserRepository : BaseRepository<AppUser>, IAppUserRepository
     {
         readonly UserManager<AppUser> _userManager;
         readonly SignInManager<AppUser> _signInManager;
@@ -21,7 +21,7 @@ namespace Project.DAL.Repositories.Concretes
         }
         public async Task<bool> AddUser(AppUser item)
         {
-            
+
 
             IdentityResult result = await _userManager.CreateAsync(item, item.PasswordHash);
             if (result.Succeeded)

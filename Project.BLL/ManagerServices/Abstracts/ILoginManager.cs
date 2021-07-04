@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.DAL.Repositories.Abstract
+namespace Project.BLL.ManagerServices.Abstracts
 {
-    public interface IAppUserRepository:IRepository<AppUser>
+    public interface ILoginManager
     {
-        Task<bool> AddUser(AppUser item);
+        Task<bool> SignInUser(AppUser item, bool remember);
     }
 }
