@@ -17,9 +17,10 @@ namespace Project.BLL.ManagerServices.Concretes
         {
             if (item.FirstName !=null)
             {
+                _iRep.Add(item);
                 return "Ekleme başarılı";
+                
             }
-            _iRep.Add(item);
             return "Editör ismi boş geçilemez";
         }
     }

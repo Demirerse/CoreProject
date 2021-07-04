@@ -1,0 +1,22 @@
+﻿@model EditorVM
+@{
+    ViewData["Title"] = "UpdateEditor";
+    Layout = "~/Views/Shared/_SedLayout.cshtml";
+}
+
+<h1>UpdateEditor</h1>
+
+<form asp-action="UpdateEditor" asp-controller="Editor" method="post">
+    <div>
+        <input type="hidden" asp-for="Editor.ID" />
+    </div>
+    <div>
+        <input type="text" asp-for="Editor.FirstName" placeholder="Editör ismi" />
+    </div>
+    <div>
+        <input type="text" asp-for="Editor.LastName" placeholder="Editör Soyismi" />
+    </div>
+    <div>
+        <button class="btn btn-dark">Ekle</button>
+    </div>
+</form>

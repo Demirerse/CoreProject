@@ -1,0 +1,19 @@
+﻿@model CategoryVM
+@{
+    ViewData["Title"] = "AddCategory2";
+    Layout = "~/Views/Shared/_SedLayout.cshtml";
+}
+
+<h1>AddCategory2</h1>
+
+<form asp-action="AddCategory2" asp-controller="Category" method="post">
+    <div>
+        <input type="text" asp-for="Category.CategoryName" placeholder="Kategori ismi" />
+    </div>
+    <div>
+        <input type="text" asp-for="Category.Description" placeholder="Açıklama" />
+    </div>
+    <div>
+        <button class="btn btn-dark">Ekle</button>
+    </div>
+</form>

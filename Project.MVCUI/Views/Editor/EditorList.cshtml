@@ -1,0 +1,43 @@
+﻿@model EditorVM
+@{
+    ViewData["Title"] = "EditorList";
+    Layout = "~/Views/Shared/_SedLayout.cshtml";
+}
+
+<h1>EditorList</h1>
+<h3 style="color:black">@TempData["message"]</h3>
+@if (Model.Editors.Count == 0)
+{
+    <div class="jumbotron">
+        Editör eklemek için <a asp-action="AddEditor" asp-controller="Editor">tıklayınız</a>
+    </div>
+}
+else
+{
+    <div class=" panel panel-primary">
+        <div class="panel panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Editör Ismi</th>
+                        <th>Editör Soyismi</th>
+                        <th colspan="2" style="padding-left:100px">işlemler : <a asp-action="AddEditor" asp-controller="Editor" class="btn btn-dark">Ekle</a></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Editor item in Model.Editors)
+                    {
+                        <tr>
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td><a asp-action="UpdateEditor" asp-controller="Editor" asp-route-id="@item.ID" class="btn btn-warning">Güncelle</a></td>
+                            <td><a asp-action="DeleteEditor" asp-controller="Editor" asp-route-id="@item.ID" class="btn btn-danger">Sil</a> </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+

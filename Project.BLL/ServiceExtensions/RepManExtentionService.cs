@@ -11,7 +11,7 @@ namespace Project.BLL.ServiceExtensions
 {
     public static class RepManExtentionService
     {
-        public static IServiceCollection AddRepManService(this IServiceCollection services)
+        public static IServiceCollection AddRepManServices(this IServiceCollection services)
         {
             //Repositories
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
